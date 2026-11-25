@@ -221,3 +221,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project data and outputs (never commit datasets, checkpoints or rater data)
+data/*
+!data/README.md
+results/*
+!results/README.md
+*.pt
+*.pth
+*.ckpt
