@@ -4,7 +4,7 @@ Code for the MTech thesis **"Development of an Explainable Deep Learning Model f
 
 - **Author:** Adewuyi Olatunde Oke
 - **Supervisor:** Dr Akintoba Akinwonmi
-- **Status:** work in progress. The repository currently holds the project structure and placeholder modules. No results are reported here yet.
+- **Status:** code for every step of the methodology is in place and runs end to end on a small synthetic sample. No results are reported here yet; they come from runs on the real datasets.
 
 ## Aim and objectives
 
@@ -12,9 +12,9 @@ The aim of the study is to develop an explainable deep learning model for multi-
 
 | Objective | What it covers | Where it lives in this repository |
 |---|---|---|
-| **(a) Design** an explainable deep learning model | Residual 1D-CNN and CNN-BiLSTM with attention; class-weighted binary cross-entropy (Eq. 3.1); SHAP, Grad-CAM and attention explanations aligned to a 5-segment x 12-lead grid (Eq. 3.2); Explainable Boosting Machine (EBM) comparator | `models/`, `xai/` |
+| **(a) Design** an explainable deep learning model | Residual 1D-CNN and CNN-BiLSTM with attention; class-weighted binary cross-entropy (Eq. 1); SHAP, Grad-CAM and attention explanations aligned to a 5-segment x 12-lead grid (Eq. 2); Explainable Boosting Machine (EBM) comparator | `models/`, `xai/` |
 | **(b) Implement** the model in (a) on PTB-XL and extend it to EchoNext | Preprocessing (100 Hz, 0.5 Hz high-pass, 50 Hz notch, per-lead z-score), patient-level folds (train 1-8, validate 9, test 10), five random seeds; retraining the 1D-CNN on EchoNext for structural heart disease | `data/`, `preprocessing/`, `training/` |
-| **(c) Evaluate** the model in (b) | Classification performance (macro-AUROC, F1, calibration) and external validation on PhysioNet/CinC 2021; faithfulness of the explanations (deletion and insertion AUC, Eq. 3.3, plus randomisation, stability, agreement and known-answer tests); clinical plausibility in a blinded cardiologist rating study (Eq. 3.4) | `evaluation/` |
+| **(c) Evaluate** the model in (b) | Classification performance (macro-AUROC, F1, calibration) and external validation on PhysioNet/CinC 2021; faithfulness of the explanations (deletion and insertion AUC, Eq. 3, plus randomisation, stability, agreement and known-answer tests); clinical plausibility in a blinded cardiologist rating study (Eq. 4) | `evaluation/` |
 
 ## Repository layout
 
@@ -29,7 +29,7 @@ notebooks/       Exploration and figure notebooks
 results/         Generated metrics, figures and tables (not committed)
 ```
 
-Each Python file currently contains a docstring describing what it will do, with function stubs that raise `NotImplementedError`.
+The step-by-step workflow is in the seven numbered notebooks in [`notebooks/`](notebooks/README.md), which import the code in the folders above.
 
 ## Datasets
 
@@ -52,7 +52,7 @@ source .venv/bin/activate        # on Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-Main libraries: PyTorch, wfdb, shap, Captum, InterpretML, scikit-learn and NeuroKit2. Versions will be pinned in `requirements.txt` once the environment is fixed, so that every run can be reproduced.
+Main libraries: PyTorch, wfdb, shap, Captum, InterpretML, scikit-learn and NeuroKit2. Tested versions are listed in `requirements.txt`.
 
 The experiments are planned to run on free or low-cost cloud GPUs (Google Colab or Kaggle, NVIDIA T4) as well as a laptop.
 
