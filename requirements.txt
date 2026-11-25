@@ -1,0 +1,14 @@
+# Versions to be pinned once the environment is fixed (thesis Section 3.4.5).
+numpy
+pandas
+scipy
+torch
+wfdb
+neurokit2
+shap
+captum
+interpret
+scikit-learn
+matplotlib
+pyyaml
+jupyter

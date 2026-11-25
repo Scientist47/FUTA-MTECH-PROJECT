@@ -1,0 +1,9 @@
+# Placeholder config: values to be confirmed before training.
+dataset: ptbxl
+sampling_rate: 100
+architecture: cnn1d
+n_outputs: 5
+loss: weighted_bce
+optimizer: adam
+batch_size: 64
+seeds: [0, 1, 2, 3, 4]
