@@ -1,9 +1,13 @@
-# Placeholder config: values to be confirmed before training.
+# Thesis Section 3.4.3. Same settings for both architectures.
 dataset: echonext
 sampling_rate: 100
 architecture: cnn1d
 n_outputs: 1
-loss: weighted_bce
+loss: weighted_bce        # Equation 1
 optimizer: adam
-batch_size: 64
+lr: 0.001
+batch_size: 128
+max_epochs: 30
+patience: 8               # early stopping on validation macro-AUROC
+augment: true             # time shift, amplitude scaling, noise
 seeds: [0, 1, 2, 3, 4]

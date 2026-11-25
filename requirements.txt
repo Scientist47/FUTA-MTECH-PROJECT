@@ -1,14 +1,16 @@
-# Versions to be pinned once the environment is fixed (thesis Section 3.4.5).
-numpy
-pandas
-scipy
-torch
-wfdb
-neurokit2
-shap
-captum
-interpret
-scikit-learn
-matplotlib
-pyyaml
+# Tested on 25 Nov 2026 with these versions (Python 3.13). Colab already has
+# numpy, pandas, scipy, torch, scikit-learn and matplotlib.
+numpy>=1.26
+pandas>=2.2
+scipy>=1.13
+torch>=2.3
+wfdb>=4.1
+neurokit2>=0.2.10
+shap>=0.46
+captum>=0.7
+interpret-core>=0.6
+scikit-learn>=1.5
+matplotlib>=3.8
+openpyxl>=3.1
+pyyaml>=6.0
 jupyter
